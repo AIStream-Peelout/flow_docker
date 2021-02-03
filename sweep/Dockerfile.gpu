@@ -8,4 +8,4 @@ RUN python setup.py develop
 ARG BASE_CONFIG
 ARG SWEEP_ID
 RUN wget -O "base.json" BASE_CONFIG 
-RUN wandb agent SWEEP_ID
+ENTRYPOINT wandb agent SWEEP_ID
