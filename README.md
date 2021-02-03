@@ -1,2 +1,2 @@
-# flow_docker
-File needed to run flow-forecast as a container.
+# Flow Forecast Training Dockerfiles
+This repository contains Dockerfiles needed to run Flow Forecast as a distributed hyperparameter sweep. 
