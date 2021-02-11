@@ -38,7 +38,7 @@ def main():
         f.write(r.text)
     the_config = make_config(result_wandb, "config.json")
     print(the_config)
-    # train_function("PyTorch", the_config)
+    train_function("PyTorch", the_config)
 
 if __name__ == "__main__":
     main()
