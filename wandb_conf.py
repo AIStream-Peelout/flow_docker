@@ -1,11 +1,31 @@
 import sys
 import json
 import os
-
-from nested_dic import DynamicAccessNestedDict
 from typing import List, Dict
 # from flood_forecast.trainer import train_function
 import requests
+from typing import List
+
+class DynamicAccessNestedDict:
+    """Dynamically get/set nested dictionary keys of 'data' dict"""
+
+    def __init__(self, data: dict):
+        self.data = data
+
+    def getval(self, keys: List):
+        data = self.data
+        for k in keys:
+            data = data[k]
+        return data
+
+    def setval(self, keys: List, val) -> None:
+        data = self.data
+        lastkey = keys[-1]
+        for k in keys[:-1]:  # when assigning drill down to *second* last key
+            if k not in data:
+                data[k] = {}
+            data = data[k]
+        data[lastkey] = val
 
 
 def convert_args(args_shit: List):
@@ -38,7 +58,7 @@ def main():
         f.write(r.text)
     the_config = make_config(result_wandb, "config.json")
     print(the_config)
-    # train_function("PyTorch", the_config)
+    train_function("PyTorch", the_config)
 
 if __name__ == "__main__":
     main()
