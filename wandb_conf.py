@@ -51,7 +51,6 @@ def make_config(wandb_config: Dict, base_config_path: str):
 
 
 def main():
-    os.environ["BASE_CONFIG_PATH"] = "https://raw.githubusercontent.com/AIStream-Peelout/flow-forecast/master/tests/custom_encode.json"
     result_wandb = convert_args(sys.argv)
     with open("config.json", "w+") as f:
         r = requests.get(os.environ["BASE_CONFIG_PATH"])
