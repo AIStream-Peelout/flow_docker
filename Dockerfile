@@ -8,5 +8,4 @@ ENV BASIC_CONFIG_PATH=${BASIC_CONFIG_PATH}
 ENV ENVIRONMENT_GCP=${ENVIRONMENT_GCP}
 RUN apt-get install -y wget
 RUN wget -O "run_flow.py" "https://raw.githubusercontent.com/AIStream-Peelout/flow_docker/master/wandb_conf.py"
-RUN python run_flow.py
 ENTRYPOINT wandb agent WANDB_SWEEP_ID
