@@ -1,4 +1,4 @@
-from pytorch/pytorch
+from pytorch/pytorch:latest
 RUN apt-get update && apt-get -y install gcc
 RUN apt install -y gcc python3-dev python3-pip g++ 
 RUN pip install flood_forecast
