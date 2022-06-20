@@ -1,4 +1,4 @@
-from pytorch/pytorch:1.7.1-cuda11.0-cudnn8-runtime
+from pytorch/pytorch
 RUN apt-get update && apt-get -y install gcc
 RUN apt install -y gcc python3-dev python3-pip g++ 
 RUN pip install flood_forecast
