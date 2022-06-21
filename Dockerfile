@@ -9,4 +9,4 @@ ENV ENVIRONMENT_GCP "DESKTOP
 ENV WANDB_PROJECT "PROJECT"
 RUN apt-get install -y wget
 RUN wget -O "run_flow.py" "https://raw.githubusercontent.com/AIStream-Peelout/flow_docker/master/wandb_conf.py"
-ENTRYPOINT wandb agent WANDB_SWEEP_ID
+ENTRYPOINT wandb agent $WANDB_SWEEP_ID
