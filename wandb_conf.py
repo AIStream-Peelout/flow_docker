@@ -6,6 +6,7 @@ from flood_forecast.trainer import train_function
 import requests
 from typing import List
 
+
 class DynamicAccessNestedDict:
     """Dynamically get/set nested dictionary keys of 'data' dict"""
 
