@@ -1,0 +1,23 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag aistream1/flow_sweep:$(date +%s)
+    - name: docker-login
+      run: docker login -u aistream1 -p ${{ secrets.DOCKER_SEC}}
+    - name: pus
+      run: docker push aistream1/flow_sweep
+

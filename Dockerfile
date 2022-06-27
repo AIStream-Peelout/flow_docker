@@ -5,7 +5,7 @@ RUN pip install flood_forecast
 ENV WANDB_API_KEY "WANDB_API_KEY"
 ENV WANDB_SWEEP_ID "WNDB_SWEEP_ID"
 ENV BASIC_CONFIG_PATH "CONFIG_PATH"
-ENV ENVIRONMENT_GCP "DESKTOP
+ENV ENVIRONMENT_GCP "DESKTOP"
 ENV WANDB_PROJECT "PROJECT"
 RUN apt-get install -y wget
 RUN wget -O "run_flow.py" "https://raw.githubusercontent.com/AIStream-Peelout/flow_docker/master/wandb_conf.py"
