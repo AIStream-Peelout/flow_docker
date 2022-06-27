@@ -17,5 +17,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: docker-login
-      run: docker login -u LOGIN -p PASSWORD
+      run: docker login -u aistream1 -p ${{ secrets.DOCKERHUB_USERNAME }}
+    - name: pus
+      run: docker push aistream1/aistream1/flow_sweep
 
