@@ -14,6 +14,8 @@ jobs:
       TAG: $(date +%s)
     steps:
     - uses: actions/checkout@v3
+    - name: get-date
+      run: echo "set-output TAG=date::$(date +%s))"
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag aistream1/flow_sweep:$TAG
     - name: docker-login
