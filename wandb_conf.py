@@ -56,7 +56,6 @@ def main():
         r = requests.get(os.environ["BASE_CONFIG_PATH"])
         f.write(r.text)
     the_config = make_config(result_wandb, "config.json")
-    print(the_config)
     train_function("PyTorch", the_config)
 
 if __name__ == "__main__":

@@ -13,4 +13,3 @@ In your environment file there should be the following items
 
 Optionally you can also have 
     - ENVIRONMENT_GCP
-    - BASIC
