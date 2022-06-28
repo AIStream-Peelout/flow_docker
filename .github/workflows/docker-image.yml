@@ -10,13 +10,15 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    env:
+      TAG: ${{steps.date.outputs.date}}
     steps:
     - uses: actions/checkout@v3
     - name: Get Date
       run: echo "set-output name=date::$(date +%s))"
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag aistream1/flow_sweep: ${{steps.date.outputs.date}}
+      run: docker build . --file Dockerfile --tag aistream1/flow_sweep:$TAG
     - name: docker-login
       run: docker login -u aistream1 -p ${{ secrets.DOCKER_SEC}}
     - name: pus
-      run: docker push aistream1/flow_sweep:${{ steps.date.outputs.date }}
+      run: docker push aistream1/flow_sweep:$TAG
