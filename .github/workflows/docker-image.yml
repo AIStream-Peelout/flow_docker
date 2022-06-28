@@ -19,5 +19,5 @@ jobs:
     - name: docker-login
       run: docker login -u aistream1 -p ${{ secrets.DOCKER_SEC}}
     - name: pus
-      run: docker push aistream1/flow_sweep:$(date +%s)
+      run: docker push aistream1/flow_sweep
 
