@@ -17,8 +17,8 @@ jobs:
     - name: get-date
       run: echo "set-output TAG=date::$(date +%s))"
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag aistream1/flow_sweep:$TAG
+      run: docker build . --file Dockerfile --tag aistream1/flow_sweep:${{ env.TAG}}
     - name: docker-login
       run: docker login -u aistream1 -p ${{ secrets.DOCKER_SEC}}
     - name: pus
-      run: docker push aistream1/flow_sweep:$TAG
+      run: docker push aistream1/flow_sweep:${{ env.TAG}}
