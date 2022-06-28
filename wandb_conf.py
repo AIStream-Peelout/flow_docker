@@ -4,7 +4,6 @@ import os
 from typing import List, Dict
 from flood_forecast.trainer import train_function
 import requests
-from typing import List
 
 
 class DynamicAccessNestedDict:
