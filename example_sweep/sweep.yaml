@@ -1,0 +1,26 @@
+
+program: wandb_conf.py
+method: grid
+name: Default sweep
+parameters:
+  batch_size:
+    values:
+      - 100
+      - 400
+  forecast_history:
+    values:
+      - 96
+  forecast_length:
+    values:
+      - 2
+  lr:
+    values:
+      - 0.001
+      - 5e-05
+  n_layers_encoder:
+    values:
+      - 2
+      - 6
+  optimizer:
+    values:
+      - BertAdam

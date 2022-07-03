@@ -51,12 +51,17 @@ def make_config(wandb_config: Dict, base_config_path: str):
 
 
 def main():
+    print("Running the code now")
+    os.environ["BASE_CONFIG_PATH"] = "https://gist.githubusercontent.com/isaacmg/b14ac64e13f50e56a3efaec5528eb711/raw/956aaed0e1da434a1ae95c58a377b44b9af6341b/example_config.json"
     result_wandb = convert_args(sys.argv)
     with open("config.json", "w+") as f:
+        # A limitation of this script is it only will get internet web
+        # urls at the moment update to include local.
         r = requests.get(os.environ["BASE_CONFIG_PATH"])
         f.write(r.text)
     the_config = make_config(result_wandb, "config.json")
     train_function("PyTorch", the_config)
+
 
 if __name__ == "__main__":
     main()
