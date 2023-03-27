@@ -39,6 +39,15 @@ def convert_args(args_shit: List):
 
 
 def make_config(wandb_config: Dict, base_config_path: str):
+    """A function to make a config file from a wandb config and a base config
+
+    :param wandb_config: The wandb configuration file
+    :type wandb_config: Dict
+    :param base_config_path: _description_
+    :type base_config_path: str
+    :return: _description_
+    :rtype: _type_
+    """
     with open(base_config_path) as f:
         data = DynamicAccessNestedDict(json.load(f))
     for key, value in wandb_config.items():

@@ -14,4 +14,4 @@ In your environment file there should be the following items:
 Optionally you can also have:
     - ENVIRONMENT_GCP
 
-Your base config path file should have the JSON file with default sweep v
+Your base config path file should have the JSON file with the default sweep values.
