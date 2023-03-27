@@ -1,0 +1,3 @@
+WANDB_API_KEY=6144887dc81d70233b859a642b75c5738c69c916
+WANDB_SWEEP_ID=igodfried/flow_forecast/i9kalg3w
+BASIC_CONFIG_PATH=https://gist.githubusercontent.com/isaacmg/b14ac64e13f50e56a3efaec5528eb711/raw/956aaed0e1da434a1ae95c58a377b44b9af6341b/example_config.json
