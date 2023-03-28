@@ -1,5 +1,5 @@
 
-program: wandb_conf.py
+program: run_flow.py
 method: grid
 name: Default sweep
 parameters:
