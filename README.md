@@ -14,3 +14,5 @@ In your environment file there should be the following items:
 4. Run `docker run --env-file .env_file aistream1/flow_sweep`
 
 Your base config path file should have the JSON file with the default sweep values.
+
+## Creating Infrastructure to run experiments
