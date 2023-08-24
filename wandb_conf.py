@@ -10,6 +10,8 @@ class DynamicAccessNestedDict:
     """Dynamically get/set nested dictionary keys of 'data' dict"""
 
     def __init__(self, data: dict):
+        """
+        """
         self.data = data
 
     def getval(self, keys: List):
@@ -62,12 +64,13 @@ def make_config(wandb_config: Dict, base_config_path: str):
 def main():
     print("Running the code now")
     result_wandb = convert_args(sys.argv)
-    with open("config.json", "w+") as f:
-        # A limitation of this script is it only will get internet web
-        # urls at the moment update to include local.
-        r = requests.get(os.environ["BASE_CONFIG_PATH"])
-        f.write(r.text)
-    the_config = make_config(result_wandb, "config.json")
+    if "https://" in os.environ["BASE_CONFIG_PATH"]: 
+        with open("config.json", "w+") as f:
+            r = requests.get(os.environ["BASE_CONFIG_PATH"])
+            f.write(r.text)
+        the_config = make_config(result_wandb, "config.json")
+    else: 
+        the_config = make_config(result_wandb, os.environ["BASE_CONFIG_PATH"])
     train_function("PyTorch", the_config)
 
 
