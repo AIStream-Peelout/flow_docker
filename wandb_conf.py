@@ -7,7 +7,7 @@ import requests
 
 
 class DynamicAccessNestedDict:
-    """Dynamically get/set nested dictionary keys of 'data' dict."""
+    """Dynamically get/set nested dictionary keys of 'data' dict"""
 
     def __init__(self, data: dict):
         """
