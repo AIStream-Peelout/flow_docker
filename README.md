@@ -1,7 +1,7 @@
 # Flow Forecast Training Dockerfiles
 This repository contains Dockerfiles needed to run Flow Forecast as a distributed Weights and Biases hyper-parameter sweep. 
 
-1. Make a sweep YAML file of the hyperparameters you want to search for on your FF model (example in the example_sweep directory)
+1. Make a sweep YAML file of the hyper-parameters you want to search for on your FF model (example in the example_sweep directory)
 2. Get your WANDB_SWEEP_ID. For this you need to run `wandb sweep --project sweeps_demo config.yaml`
 3. Make an environment file
 In your environment file there should be the following items:
