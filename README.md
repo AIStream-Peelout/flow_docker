@@ -11,6 +11,6 @@ In your environment file there should be the following items:
 - BASIC_CONFIG_PATH
 - ENVIRONMENT_GCP (option)
 
-4. Run `docker run --env-file .env_file aistream1/flow_sweep`
+1. Run `docker run --env-file .env_file aistream1/flow_sweep`
 
 Your base config path file should have the JSON file with the default sweep values.
