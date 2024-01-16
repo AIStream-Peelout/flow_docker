@@ -46,7 +46,7 @@ def make_config(wandb_config: Dict, base_config_path: str):
     :param base_config_path: The path to the base config file
     :type base_config_path: str
     :return: The modified config file with the proper values
-    :rtype: _type_
+    :rtype: dict
     """
     with open(base_config_path) as f:
         data = DynamicAccessNestedDict(json.load(f))
@@ -60,7 +60,7 @@ def make_config(wandb_config: Dict, base_config_path: str):
 
 
 def main():
-    print("Running the code now")
+    print("Running the sweep code now")
     result_wandb = convert_args(sys.argv)
     with open("config.json", "w+") as f:
         # A limitation of this script is it only will get internet web
