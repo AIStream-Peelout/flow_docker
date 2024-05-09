@@ -3,7 +3,7 @@ RUN apt-get update && apt-get -y install gcc
 RUN apt install -y gcc python3-dev python3-pip g++ 
 RUN pip install flood_forecast
 ENV WANDB_API_KEY "WANDB_API_KEY"
-ENV WANDB_SWEEP_ID "WNDB_SWEEP_ID"
+ENV WANDB_SWEEP_ID "WANDB_SWEEP_ID"
 ENV BASE_CONFIG_PATH "BASE_CONFIG_PATH"
 ENV ENVIRONMENT_GCP "DESKTOP"
 ENV WANDB_PROJECT "PROJECT"
